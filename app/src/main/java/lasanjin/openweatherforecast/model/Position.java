@@ -1,7 +1,7 @@
 package lasanjin.openweatherforecast.model;
 
 /**
- * Location contains weather
+ * Location contains current weather and weather forecast
  */
 public class Position {
     private WeatherForecast weatherForecast;

@@ -1,4 +1,4 @@
-package lasanjin.openweatherforecast;
+package lasanjin.openweatherforecast.activities;
 
 import android.Manifest;
 import android.content.Context;
@@ -16,6 +16,7 @@ import org.json.JSONException;
 
 import java.util.List;
 
+import lasanjin.openweatherforecast.R;
 import lasanjin.openweatherforecast.controller.MainController;
 import lasanjin.openweatherforecast.model.DayForecast;
 import lasanjin.openweatherforecast.model.Position;
