@@ -90,13 +90,13 @@ public class OpenWeatherMapClient {
             //Read the next byte of data from the input stream
             InputStream streamReader = connection.getInputStream();
 
+            int read;
             byte[] buffer = new byte[4096];
 
             //Output stream in which the data is written into a byte array.
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
-
-            while (streamReader.read(buffer) != -1) {
-                baos.write(buffer);
+            while ((read = streamReader.read(buffer)) != -1) {
+                baos.write(buffer, 0, read);
             }
 
             return baos.toByteArray();
