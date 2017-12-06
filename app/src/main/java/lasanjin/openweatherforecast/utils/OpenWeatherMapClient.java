@@ -25,7 +25,6 @@ public class OpenWeatherMapClient {
     private static final String LONGITUDE = "&lon=";
     private static final String IMAGE_FORMAT = ".png";
 
-
     private OpenWeatherMapClient() {
     }
 
@@ -91,7 +90,7 @@ public class OpenWeatherMapClient {
             //Read the next byte of data from the input stream
             InputStream streamReader = connection.getInputStream();
 
-            byte[] buffer = new byte[1024];
+            byte[] buffer = new byte[5120];
 
             //Output stream in which the data is written into a byte array.
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
