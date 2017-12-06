@@ -1,18 +1,13 @@
 package lasanjin.openweatherforecast.model;
 
 /**
- * Location contains current weather and weather forecast
+ * Position contains current weather in location and weather forecast
  */
 public class Position {
-    private WeatherForecast weatherForecast;
     private Weather weather;
     private String city;
 
     public Position() {
-    }
-
-    public void setWeatherForecast(WeatherForecast weatherForecast) {
-        this.weatherForecast = weatherForecast;
     }
 
     public void setWeather(Weather weather) {
@@ -21,10 +16,6 @@ public class Position {
 
     public void setCity(String city) {
         this.city = city;
-    }
-
-    public WeatherForecast getWeatherForecast() {
-        return weatherForecast;
     }
 
     public Weather getWeather() {

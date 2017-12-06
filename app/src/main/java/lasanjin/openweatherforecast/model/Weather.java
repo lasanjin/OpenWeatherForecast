@@ -1,7 +1,7 @@
 package lasanjin.openweatherforecast.model;
 
 /**
- * Weather contains temperature
+ * Weather contains temperature, short description and image of weather
  */
 public class Weather {
     private Temperature temperature;

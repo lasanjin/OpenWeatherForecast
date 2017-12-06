@@ -1,7 +1,7 @@
 package lasanjin.openweatherforecast.model;
 
 /**
- * Day (or date) contains weather
+ * Day (date) containing weather data
  */
 public class DayForecast {
     private Weather weather;

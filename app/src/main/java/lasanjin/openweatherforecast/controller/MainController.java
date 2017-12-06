@@ -13,7 +13,7 @@ import lasanjin.openweatherforecast.model.WeatherForecast;
 import lasanjin.openweatherforecast.view.IWeather;
 
 /**
- * Resposible for controlling data shown the view.
+ * This class is resposible for controlling data shown in view.
  */
 public class MainController implements IWeather {
     private TextView mCurrentWeather;
@@ -32,7 +32,6 @@ public class MainController implements IWeather {
     private ImageView mForecastImage3;
 
     public MainController() {
-
     }
 
     public void initForeCast(WeatherForecast forecast) {

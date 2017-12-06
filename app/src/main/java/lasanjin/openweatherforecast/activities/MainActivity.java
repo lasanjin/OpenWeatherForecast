@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         String[] location = buildLocation();
 
-        CurentWeatherTask weatherTask = new CurentWeatherTask();
+        CurrentWeatherTask weatherTask = new CurrentWeatherTask();
         weatherTask.execute(location);
 
         WeatherForecastTask forecastTask = new WeatherForecastTask();
@@ -59,10 +59,10 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * AsyncTask enables proper and easy use of the UI thread.
-     * This class allows you to perform background operations
+     * This class allows us to perform background operations
      * and publish results on the UI thread without having to manipulate threads and/or handlers.
      */
-    private class CurentWeatherTask extends AsyncTask<String, Void, Position> {
+    private class CurrentWeatherTask extends AsyncTask<String, Void, Position> {
         @Override
         protected Position doInBackground(String... params) {
             Position position = new Position();

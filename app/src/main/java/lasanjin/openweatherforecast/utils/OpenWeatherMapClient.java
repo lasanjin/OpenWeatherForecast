@@ -14,7 +14,7 @@ import java.net.URL;
 public class OpenWeatherMapClient {
     private static final String REQUEST_METHOD = "GET";
 
-    private static final String CURRENT_URL = "http://api.openweathermap.org/data/2.5/weather?";
+    private static final String CURRENT_WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather?";
     private static final String FORECAST_URL = "http://api.openweathermap.org/data/2.5/forecast?";
     private static final String IMAGE_URL = "http://openweathermap.org/img/w/";
     private static final String API_KEY = "&APPID=511a2304bbfdb284ad18a964231b057e";
@@ -47,7 +47,7 @@ public class OpenWeatherMapClient {
 
             //Read bytes and decode them into characters
             InputStreamReader streamReader =
-                    new InputStreamReader(connection.getInputStream()); //ISR deals with strings.
+                    new InputStreamReader(connection.getInputStream());
 
             //Read text from a character-input stream
             BufferedReader reader = new BufferedReader(streamReader);
@@ -75,7 +75,7 @@ public class OpenWeatherMapClient {
     }
 
     private static String selectUrl(boolean forecast) {
-        return forecast ? FORECAST_URL : CURRENT_URL;
+        return forecast ? FORECAST_URL : CURRENT_WEATHER_URL;
     }
 
     public static byte[] getImage(String code) {
@@ -90,7 +90,7 @@ public class OpenWeatherMapClient {
             //Read the next byte of data from the input stream
             InputStream streamReader = connection.getInputStream();
 
-            byte[] buffer = new byte[5120];
+            byte[] buffer = new byte[4096];
 
             //Output stream in which the data is written into a byte array.
             ByteArrayOutputStream baos = new ByteArrayOutputStream();

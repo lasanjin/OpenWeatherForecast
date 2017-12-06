@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Weatherforecast contains days of forecast
+ * WeatherForecast contains days of forecast
  */
 public class WeatherForecast {
     private List<DayForecast> daysForecast;

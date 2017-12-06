@@ -11,7 +11,7 @@ import lasanjin.openweatherforecast.model.Weather;
 import lasanjin.openweatherforecast.model.WeatherForecast;
 
 /**
- * This class obtains and saves data from JSON file in the model
+ * This class obtains and saves data from JSON files to the model
  */
 public class JSONParser {
 
