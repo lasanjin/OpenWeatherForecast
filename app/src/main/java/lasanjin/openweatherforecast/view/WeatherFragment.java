@@ -15,7 +15,7 @@ import java.util.List;
 import lasanjin.openweatherforecast.R;
 
 public class WeatherFragment extends Fragment {
-    private IWeather mController;
+    private IController mController;
 
     public WeatherFragment() {
         // Required empty public constructor
@@ -88,7 +88,7 @@ public class WeatherFragment extends Fragment {
         return mController != null;
     }
 
-    public void setIController(IWeather controller) {
+    public void setIController(IController controller) {
         mController = controller;
     }
 }

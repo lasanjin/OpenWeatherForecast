@@ -1,7 +1,7 @@
 package lasanjin.openweatherforecast.model;
 
 /**
- * Day (date) containing weather data
+ * Day containing weather data with date and time.
  */
 public class DayForecast {
     private Weather weather;
@@ -18,7 +18,7 @@ public class DayForecast {
         this.date = date;
     }
 
-    public Weather getWeather() {
+    public Weather getWeather(Weather w) {
         return weather;
     }
 

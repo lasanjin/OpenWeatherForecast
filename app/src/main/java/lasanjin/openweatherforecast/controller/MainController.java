@@ -8,14 +8,15 @@ import android.widget.TextView;
 import java.util.List;
 
 import lasanjin.openweatherforecast.model.DayForecast;
+import lasanjin.openweatherforecast.model.IWeather;
 import lasanjin.openweatherforecast.model.Position;
 import lasanjin.openweatherforecast.model.WeatherForecast;
-import lasanjin.openweatherforecast.view.IWeather;
+import lasanjin.openweatherforecast.view.IController;
 
 /**
  * This class is resposible for controlling data shown in view.
  */
-public class MainController implements IWeather {
+public class MainController implements IController {
     private TextView mCurrentWeather;
     private ImageView mCurrentWeatherImage;
 
@@ -34,7 +35,7 @@ public class MainController implements IWeather {
     public MainController() {
     }
 
-    public void initForeCast(WeatherForecast forecast) {
+    public void initForeCast(IWeather forecast) {
         if (forecast != null) {
             List<DayForecast> forecastList = forecast.getDayForecasts();
             DayForecast time1 = forecastList.get(1);
@@ -55,15 +56,15 @@ public class MainController implements IWeather {
         }
     }
 
-    public void initCurrentWeather(Position position) {
+    public void initCurrentWeather(IWeather position) {
         if (position != null) {
-            byte[] iconData = position.getWeather().getIconData();
+            byte[] iconData = position.getWeather(null).getIconData();
             Bitmap img = BitmapFactory.decodeByteArray(iconData, 0, iconData.length);
             mCurrentWeatherImage.setImageBitmap(img);
 
             mCurrentWeather.setText(position.getCity() + "\n"
-                    + position.getWeather().getDescription() + "\n"
-                    + (int) position.getWeather().getTemperature().getTemp() + " °C" + "\n"
+                    + position.getWeather(null).getDescription() + "\n"
+                    + (int) position.getWeather(null).getTemperature().getTemp() + " °C" + "\n"
             );
         }
     }
@@ -96,11 +97,11 @@ public class MainController implements IWeather {
     }
 
     private String getText(DayForecast time) {
-        return String.valueOf((int) time.getWeather().getTemperature().getTemp() + " °C");
+        return String.valueOf((int) time.getWeather(null).getTemperature().getTemp() + " °C");
     }
 
     private Bitmap getImage(DayForecast forecast) {
-        byte[] iconData = forecast.getWeather().getIconData();
+        byte[] iconData = forecast.getWeather(null).getIconData();
         return BitmapFactory.decodeByteArray(iconData, 0, iconData.length);
     }
 }
