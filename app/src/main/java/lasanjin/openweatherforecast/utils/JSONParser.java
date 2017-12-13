@@ -61,6 +61,7 @@ public class JSONParser {
         JSONObject json = new JSONObject(data);
         JSONArray jsonArr = json.getJSONArray("list"); //Forecast data
 
+        //Make sure to stay in range of available forecast.
         int days = numberOfDays > 36 || numberOfDays <= 0 ? jsonArr.length() : numberOfDays;
         for (int i = 0; i < days; i++) {
 
