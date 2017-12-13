@@ -4,8 +4,8 @@ Weather forecast application for Android. Make sure your phone is running Androi
 
 
 ## GUI
-<p align="center"><img src="/application_ui.jpg"width="320" height="567"></p>
+<p align="center"><img src="/app_gui.jpg"width="320" height="567"></p>
 
 
 ## Dependencies
-<p align="center"><img src="/dependencies.jpg"width="510" height="560"></p>
+<p align="center"><img src="/dependencies.jpg"></p>
